@@ -1,0 +1,144 @@
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+.btn-a{
+    text-decoration: none;
+    border: 0.2rem rgb(39, 39, 88) solid;
+    border-radius: 0.4rem;
+    padding: 0.1rem 1rem;
+    margin-left: 5rem;
+    color: gray;
+}
+.btn-a:active {
+    text-decoration: none;
+    color: gray;
+}
+
+.btn-a:visited {
+    text-decoration: none;
+    color: gray;
+}
+
+.btn-a:hover {
+    color: green;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.obj-row {
+    background-color: #f5f5f5;
+}
+
+.obj-row:hover {
+    background-color: burlywood;
+}
+
+.obj-item {
+    padding: 10px;
+}
+
+.not-found {
+    text-align: center;
+    font-size: 7rem;
+    color: #f00;
+    margin: 10rem;
+    padding: 2rem;
+    background-color: #5f5f5f;
+    border-radius: 3rem;
+}
+
+.book-obj {
+    width: 50rem;
+    background-color: #f5f5f5;
+    border-radius: 1rem;
+    padding: 3rem;
+    margin: 1rem;
+}
+
+.book-obj-head {
+    width: 30%;
+    background-color: yellowgreen;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.book-obj-content {
+    width: 70%;
+    background-color: rgb(205, 207, 197);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.btn {
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.btn-create {
+    background-color: green;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border: 0.2rem solid green;
+}
+
+.btn-create:hover {
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border: 0.2rem solid green;
+}
+
+.btn-delete {
+    background-color: #f00;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    margin: 0.3rem;
+    border: 1px solid #f00;
+}
+
+.btn-delete:hover {
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    margin: 0.3rem;
+    border: 0.1rem solid #f00;
+}
+
+.input-group {
+    width: 100%;
+    margin: 1rem;
+    background-color: #a7a2a2;
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+
+.input-label {
+    width: 20%;
+    font-weight: bold;
+}
+
+.input-field {
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    border: 1px solid white;
+}
+
+.input-field[type=text]:focus {
+    width: 80%;
+    padding: 0.5rem;
+    outline: 0.3rem solid green;
+    border-radius: 0.2rem;
+}

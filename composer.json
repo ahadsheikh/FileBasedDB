@@ -1,0 +1,11 @@
+{
+    "name": "ahad/json-db",
+    "description": "This is a project with file based database.",
+    "authors": [
+        {
+            "name": "Ahad Sheikh",
+            "email": "ahadsheikh1999@gmail.com"
+        }
+    ],
+    "require": {}
+}
