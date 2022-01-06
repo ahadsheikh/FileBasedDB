@@ -4,11 +4,11 @@ include_once('Database/database.php');
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    
+
     $db = new Database($BASE_DIR . '/' . $DB_PATH);
     $obj = $db->get($id);
 
-    if(empty($obj)) {
+    if (empty($obj)) {
         header('Location: 404.php');
         die();
     }
@@ -41,6 +41,9 @@ if (isset($_GET['id'])) {
     <div class="flex-container" style="justify-content: center ;">
         <div class="book-obj">
             <h1 style="text-align: center;">Book</h1>
+            <div class="flex-container" style="width:100%;justify-content: end;">
+                <a class="btn-a" href="<?php echo 'edit.php?id=' . $id; ?>" style="font-weight:bold">EDIT</a>
+            </div>
             <?php foreach ($obj as $key => $value) : ?>
                 <div class="flex-container">
                     <h3 class="book-obj-head"><?php echo ucwords($key); ?></h3>

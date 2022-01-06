@@ -42,12 +42,13 @@ class Database{
 
     public function search($content, $search_type = 'title'){ 
         $data = $this->get_data();
+        $res = array();
         foreach($data as $key => $obj){
-            if($obj[$search_type] != $content ){
-                array_splice($data, $key, 1);
+            if($obj[$search_type] === $content ){
+                array_push($res, $obj);
             }
         }
-        return $data;
+        return $res;
     }
 
     public function create($data){
@@ -63,11 +64,20 @@ class Database{
 
     public function get($id){
         $db = $this->get_data();
-        if($id-1 <= count($db)){
+        if($id <= count($db)){
             return $db[$id-1];
         }else{
             return array();
         }
+    }
+    public function update($id, $data){
+        $db = $this->get_data();
+        if($id <= count($db)){
+            $db[$id-1] = $data;
+            $this->write_data($db);
+            return true;
+        }
+        return false;
     }
     public function delete($id){
         $db = $this->get_data();
