@@ -4,7 +4,14 @@ include_once('config.php');
 include_once('Database/database.php');
 
 $db = new Database($BASE_DIR . '/' . $DB_PATH);
-$data = $db->list();
+$data = array();
+
+if(isset($_GET['search'])){
+    $search = htmlspecialchars($_GET['search']);
+    $data = $db->search($search);
+}else{
+    $data = $db->list();
+}
 
 ?>
 
@@ -24,12 +31,19 @@ $data = $db->list();
 <body>
     <nav class="container">
         <div class="flex-container" style="width: 100%; justify-content: space-between;">
-            <a class="btn-a" href="<?php echo $BASE_URL ?>"><h1>DB Home</h1></a>
+            <a class="btn-a" href="<?php echo $BASE_URL ?>">
+                <h1>DB Home</h1>
+            </a>
         </div>
     </nav>
     <div class="flex-container" style="justify-content: center;">
         <div>
             <h1 style="text-align: center;">All Data</h1>
+            <form>
+                <input type="hidden" value="SEARCH_REQUEST">
+                <input type="text" name="search">
+                <button type="submit">Search</button>
+            </form>
             <table border="1">
                 <tr>
                     <th>Title</th>

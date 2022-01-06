@@ -5,10 +5,10 @@ include_once('Database/database.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     print_r($_POST);
     $obj = array(
-        'title' => $_POST['title'],
-        'author' => $_POST['author'],
-        'available' => (boolean)$_POST['available'] ? true : false,
-        'isbn' => $_POST['isbn']
+        'title' => htmlspecialchars($_POST['title']),
+        'author' => htmlspecialchars($_POST['author']),
+        'available' => (boolean)htmlspecialchars($_POST['available']) ? true : false,
+        'isbn' => htmlspecialchars($_POST['isbn'])
     );
 
     $db = new Database($BASE_DIR . '/' . $DB_PATH);

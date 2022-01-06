@@ -40,6 +40,16 @@ class Database{
         return $this->get_data();
     }
 
+    public function search($content, $search_type = 'title'){ 
+        $data = $this->get_data();
+        foreach($data as $key => $obj){
+            if($obj[$search_type] != $content ){
+                array_splice($data, $key, 1);
+            }
+        }
+        return $data;
+    }
+
     public function create($data){
         if($this->validate($data)){
             $db = $this->get_data();
