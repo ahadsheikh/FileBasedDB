@@ -41,7 +41,7 @@ $data = $db->list();
 
                     <tr class="obj-row">
                         <td class="obj-item">
-                            <a href="<?php echo $BASE_URL . '/' . 'show.php?id=' . (int)($key + 1); ?>">
+                            <a href="<?php echo 'show.php?id=' . (int)($key + 1); ?>">
                                 <?php echo $obj['title']; ?>
                             </a>
                         </td>
@@ -49,7 +49,7 @@ $data = $db->list();
                         <td class="obj-item"><?php echo $obj['available'] ? 'True' : 'False'; ?></td>
                         <td class="obj-item"><?php echo $obj['isbn']; ?></td>
                         <td>
-                            <a href="<?php echo $BASE_URL . '/' . 'delete.php?id=' . (int)($key + 1); ?>">
+                            <a href="<?php echo 'delete.php?id=' . (int)($key + 1); ?>">
                                 <button class="btn-delete">Delete</button>
                             </a>
                         </td>
@@ -59,7 +59,7 @@ $data = $db->list();
         </div>
     </div>
     <div class="flex-container" style="justify-content: center;">
-        <a href="<?php echo $BASE_URL . '/' . 'create.php' ?>">
+        <a href="<?php echo 'create.php' ?>">
             <button class="btn-create">Create</button>
         </a>
     </div>
