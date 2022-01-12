@@ -1,17 +1,17 @@
 <?php
-include_once('config.php');
-include_once('Database/database.php');
+include_once('App/config.php');
+include_once('App/Database/database.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     print_r($_POST);
     $obj = array(
         'title' => htmlspecialchars($_POST['title']),
         'author' => htmlspecialchars($_POST['author']),
-        'available' => (boolean)htmlspecialchars($_POST['available']) ? true : false,
+        'available' => (boolean)htmlspecialchars($_POST['available']) ? 1 : 0,
         'isbn' => htmlspecialchars($_POST['isbn'])
     );
 
-    $db = new Database($BASE_DIR . '/' . $DB_PATH);
+    $db = new Database($DB_TYPE, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS);
     $status = $db->create($obj);
     if($status){
         header('Location: ' . $BASE_URL . '/show.php?id=' . $status);

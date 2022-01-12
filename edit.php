@@ -1,17 +1,22 @@
 <?php
-include_once('config.php');
-include_once('Database/database.php');
+include_once('App/config.php');
+include_once('App/Database/database.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $id = htmlspecialchars($_POST['id']);
     $obj = array(
         'title' => htmlspecialchars($_POST['title']),
         'author' => htmlspecialchars($_POST['author']),
-        'available' => (boolean)htmlspecialchars($_POST['available']) ? true : false,
+        'available' => (boolean)htmlspecialchars($_POST['available']) ? 1 : 0,
         'isbn' => htmlspecialchars($_POST['isbn'])
     );
 
-    $db = new Database($BASE_DIR . '/' . $DB_PATH);
+    // echo '<pre>';
+    // print_r($obj);
+    // echo '</pre>';
+
+
+    $db = new Database($DB_TYPE, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS);
     $status = $db->update($id, $obj);
     if($status){
         header('Location: '.'/show.php?id=' . $id);
@@ -23,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         
-        $db = new Database($BASE_DIR . '/' . $DB_PATH);
+        $db = new Database($DB_TYPE, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS);
         $obj = $db->get($id);
     
         if(empty($obj)) {

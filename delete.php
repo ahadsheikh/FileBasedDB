@@ -1,11 +1,11 @@
 <?php
-include_once('config.php');
-include_once('Database/database.php');
+include_once('App/config.php');
+include_once('App/Database/database.php');
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $db = new Database($BASE_DIR . '/' . $DB_PATH);
+    $db = new Database($DB_TYPE, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS);
     $obj = $db->delete($id);
 
     if (empty($obj)) {
