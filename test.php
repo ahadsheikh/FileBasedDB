@@ -35,3 +35,5 @@ main concepts behind these workflows, and shows how to choose the one that suits
 development—to work more smoothly and eliminate pain points. If you’re looking for hands-on experience so you can work more effectively and 
 collaboratively in Git, join Kevin in this course.
 */
+
+// Fix the hotfix
